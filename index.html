@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Learning Evolution</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Is Online Learning A Way Forward in Education?</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="timeline.html">Timeline</a></li>
+            <li><a href="comparison.html">Comparison</a></li>
+            <li><a href="case-analysis.html">Case Analysis</a></li>
+            <li><a href="recommendations.html">Recommendations</a></li>
+            <li><a href="conclusion.html">Conclusion</a></li>
+            <li><a href="biography.html">Author Bio</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+    </nav>
+    <section class="intro">
+        <h2>Introduction to Online Learning</h2>
+        
+        <br>
+
+        <div class="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item">
+                    <img src="images/image1.png" alt="Evolution of Online Learning">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/image2.png" alt="Online Learning Platform">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/image3.png" alt="Virtual Classrooms">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/image4.png" alt="Interactive Learning">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/image5.png" alt="Global Access to Education">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/image6.webp" alt="Global Access to Education">
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button id="prev"> ‹ </button>
+                <button id="next"> › </button>
+            </div>
+        </div>
+
+        <p>Online learning has become a transformative force in education, accelerating dramatically with the onset of the COVID-19 pandemic. As educational institutions around the world closed their doors, over 91% of students found themselves turning to digital platforms to continue their studies.</p>
+        <p>This shift has not only provided an alternative route for students to learn remotely, but it has also empowered educators and institutions to integrate a wide array of digital tools and resources. Online learning allows students to learn at their own pace and on their own time, opening up a world of educational opportunities that were previously difficult to access.</p>
+        <p>In this report, we explore whether online learning represents the future of education, covering:</p>
+        <ul>
+            <li>The evolution of online learning over time</li>
+            <li>The advantages of online learning</li>
+            <li>The ongoing challenges in providing and receiving online lessons</li>
+            <li>Analysis of two significant learning platforms</li>
+            <li>Recommendations for improving online learning going forward</li>
+        </ul>
+
+        <br>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 | An Najmus Saqib Muaaz & Amaan AHmad</p>
+    </footer>
+
+    <script>
+        // Carousel functionality
+const carouselInner = document.querySelector('.carousel-inner');
+const prevButton = document.getElementById('prev');
+const nextButton = document.getElementById('next');
+let currentIndex = 0;
+
+// Set the total number of carousel items based on your HTML structure
+const totalItems = document.querySelectorAll('.carousel-item').length;
+
+// Function to update the carousel position
+function updateCarousel() {
+    const offset = -currentIndex * 100; // Move the carousel by 100% of the item width
+    carouselInner.style.transform = `translateX(${offset}%)`; // Apply the sliding effect
+}
+
+// Event listener for the "previous" button
+prevButton.addEventListener('click', () => {
+    currentIndex = (currentIndex > 0) ? currentIndex - 1 : totalItems - 1; // Loop to the last item when at the start
+    updateCarousel();
+});
+
+// Event listener for the "next" button
+nextButton.addEventListener('click', () => {
+    currentIndex = (currentIndex < totalItems - 1) ? currentIndex + 1 : 0; // Loop to the first item when at the end
+    updateCarousel();
+});
+
+    </script>
+</body>
+</html>

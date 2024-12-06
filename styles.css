@@ -1,0 +1,445 @@
+/* Set a base font size for better proportionality */
+html {
+    font-size: 18px; /* Default size for base font size */
+}
+
+/* Adjusting headings for responsiveness */
+header h1 {
+    font-size: 2rem; /* Larger, proportional header */
+}
+
+/* Navigation items proportional adjustments */
+nav ul li a {
+    font-size: 1.125em; /* Ensures links are proportionally larger */
+}
+
+
+
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling with New Font */
+body {
+    font-family: 'Roboto', sans-serif; /* Use Roboto for body text */
+    font-weight: 400;
+    font-size: 1.2rem;
+    text-align: justify;
+    color: rgba(255, 255, 255, 0.9); /* Lighter text color with increased opacity */
+    line-height: 1.75; /* Increased line-height for better readability */
+    padding: 5% 15%;
+    background-image: url('images/bkg.webp');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    background-color: rgba(0, 0, 0, 0.8); /* Slightly dimmed background */
+    background-blend-mode: darken; /* Blend the background to reduce its boldness */
+    padding-top: 55px; /* Adjusted padding to account for the fixed navbar height */
+    font-size: 1.25rem; /* Equivalent to 18px */
+}
+
+p{
+    margin-top: 10px;
+}
+
+/* Header Styling with Playfair Display */
+header {
+    background-color: rgba(31, 31, 31, 0.8); /* Semi-transparent dark overlay */
+    padding: 20px 10px; /* More padding for larger screens */
+    text-align: center;
+    margin-top: 30px; /* Add a margin to avoid overlap with navbar */
+}
+
+header h1 {
+    color: #ffffff; /* White text for better contrast */
+    font-family: 'Playfair Display', serif; /* Use Playfair Display for headers */
+    font-size: 3rem; /* Larger font size for better readability */
+    margin: 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* Subtle text shadow for emphasis */
+    line-height: 1.3;
+    text-align: center;
+}
+
+/* Navigation Bar Styling */
+nav {
+    position: fixed; /* Fixes the navigation bar at the top of the page */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(31, 31, 31, 0.8); /* Dark, semi-transparent background */
+    z-index: 500; /* Ensures it's above other content */
+    padding: 15px 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5); /* Adds a subtle shadow */
+}
+
+/* Navigation Items */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow the items to wrap on smaller screens */
+}
+
+nav ul li {
+    margin-right: 25px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+/* Navigation Links */
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif; /* Use Roboto for nav links */
+    font-weight: 400;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4); /* Light text shadow */
+    transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth transition */
+}
+
+/* Hover effect for navigation links */
+nav ul li a:hover {
+    color: #00bcd4;
+    text-decoration: underline;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #1f1f1f;
+    color: #ffffff; /* White text for footer */
+}
+
+/* Section Headings */
+h2 {
+    color: #00bcd4; /* Light blue color for headings */
+    font-family: 'Playfair Display', serif; /* Use Playfair Display for headings */
+    font-size: 2.5rem; /* Larger heading size */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); /* Slight shadow for emphasis */
+    text-align: center;
+    margin-bottom: 0;
+
+}
+
+/* Gallery Image Styling */
+.gallery-img {
+    width: 80%;
+    margin: 15px;
+    border-radius: 10px;
+    display: inline-block;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* Added shadow for better separation */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+.gallery-img:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th {
+    border: 1px solid #ffffff;
+    text-align: center;
+}
+
+td {
+    text-align: left;
+    border: 1px solid #ffffff;
+    padding-left: 5%;
+}
+
+th {
+    padding: 15px;
+}
+
+table tr:hover {
+    background-color: rgba(0, 0, 0, 0.2); 
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    body {
+        font-size: 1.25rem; /* Increase font size for better readability on small screens */
+    }
+
+    header h1 {
+        font-size: 3rem; /* Adjust header font size for mobile */
+        margin-bottom: 0.5%; /* Add space below the header */
+    }
+
+    nav ul li a {
+        font-size: 1.2rem; /* Increase nav link size */
+        padding: 12px 0;
+    }
+
+    /* Adjust layout to stack content on small screens */
+    section {
+        padding: 30px 10px; /* Adjust padding for smaller screens */
+    }
+
+    /* Stack gallery images for mobile */
+    .gallery-img {
+        width: 90%; /* Use full width on small screens */
+        margin: 10px 0;
+    }
+}
+
+video {
+    width: 100%;
+    margin-top: 20px;
+}
+
+audio {
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* General Carousel Styles */
+.carousel {
+    position: relative;
+    width: 100%; /* Make the carousel container full width */
+    max-width: 1200px; /* Limit the maximum width */
+    margin: 0 auto; /* Center the carousel */
+    overflow: hidden;
+    border-radius: 10px; /* Optional: rounded corners */
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%; /* Ensure the inner container takes full width */
+}
+
+.carousel-item {
+    flex: 0 0 100%; /* Each item should take 100% width of the container */
+    max-width: 100%; /* Ensure the item doesn't overflow */
+    display: flex;
+    justify-content: center; /* Center the content inside the item */
+}
+
+.carousel img {
+    width: 100%;
+    height: auto; /* Preserve aspect ratio of images */
+    object-fit: cover; /* Ensure images fill the space without distortion */
+    border-radius: 10px; /* Optional: rounded corners for images */
+}
+/* Carousel Controls */
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 10; /* Ensure controls are on top */
+}
+
+.carousel-controls button {
+    background: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    border: none;
+    padding: 14px; /* Equal padding for all sides */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    display: flex; /* Use flex to align content */
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    width: 40px; /* Set a fixed width */
+    height: 40px; /* Set a fixed height */
+}
+
+.carousel-controls button:hover {
+    background-color: #00bcd4; /* Light blue on hover */
+    transform: scale(1.1); /* Slight zoom effect */
+}
+
+.carousel-controls button:focus {
+    outline: none;
+}
+
+.carousel-controls button:hover {
+    background-color: #00bcd4; /* Light blue on hover */
+    transform: scale(1.1); /* Slight zoom effect */
+}
+
+.carousel-controls button:focus {
+    outline: none;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
+    .carousel img {
+        object-fit: contain; /* Change image scaling for smaller screens */
+    }
+
+    .carousel-controls button {
+        padding: 12px 16px; /* Smaller padding for controls */
+        font-size: 1.2rem; /* Smaller icons */
+    }
+
+    /* Make sure the carousel arrows are always within the view */
+    .carousel-controls button {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel {
+        padding: 0 10px; /* Add padding for very small screens */
+    }
+
+    .carousel-controls button {
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        font-size: 1.1rem; /* Smaller font for buttons */
+    }
+}
+
+/* Improved Bullet List Styling */
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+    line-height: 1.8;
+    font-size: 1.1rem; /* Increased font size for better readability */
+}
+
+ol {
+    list-style-type: decimal;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+ol li {
+    margin-bottom: 10px;
+    line-height: 1.8;
+    font-size: 1.1rem; /* Increased font size for better readability */
+}
+
+        /* Beautify the form */
+        .feedback {
+            max-width: 600px;
+            margin: 50px auto;
+            background: rgba(31, 31, 31, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            color: #fff;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .feedback h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+        }
+
+        label {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            font-size: 1.2rem;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+        }
+
+        input[type="submit"] {
+            background: #00bcd4;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-family: 'Roboto', sans-serif;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background: #0097a7;
+        }
+
+        .feedback-list {
+            max-width: 800px;
+            margin: 30px auto;
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .feedback-list h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 90%;
+            border-collapse: collapse;
+            margin: 10px 0;
+        }
+
+        table th, table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        table th {
+            background: #00bcd4;
+            color: #fff;
+        }
+
+        /* Button Styling */
+        .btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            text-align: center;
+            display: block;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }

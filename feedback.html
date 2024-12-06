@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <header>
+        <h1>Is Online Learning A Way Forward in Education?</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="timeline.html">Timeline</a></li>
+            <li><a href="comparison.html">Comparison</a></li>
+            <li><a href="case-analysis.html">Case Analysis</a></li>
+            <li><a href="recommendations.html">Recommendations</a></li>
+            <li><a href="conclusion.html">Conclusion</a></li>
+            <li><a href="biography.html">Author Bio</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+    </nav>
+    
+    <section class="feedback">
+        <h2>We Value Your Feedback</h2>
+        <form id="feedbackForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+            <label for="feedback">Feedback:</label>
+            <textarea id="feedback" name="feedback" rows="4" required></textarea><br>
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+
+    <section class="feedback-list">
+        <h2>Previous Feedback</h2>
+        <input type="file" id="csvFileInput" accept=".csv"><br>
+        <table id="feedbackTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Feedback</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Previous feedback will be inserted here -->
+            </tbody>
+        </table>
+        <button class="btn" id="downloadBtn">Download Feedback as CSV</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Evolution of Online Learning</p>
+    </footer>
+
+    <script>
+        const feedbackForm = document.getElementById('feedbackForm');
+        const csvFileInput = document.getElementById('csvFileInput');
+        const feedbackTableBody = document.querySelector('#feedbackTable tbody');
+        const downloadBtn = document.getElementById('downloadBtn');
+        let feedbackData = [];
+
+        // Handle form submission and add feedback
+        feedbackForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const feedback = document.getElementById('feedback').value;
+
+            // Add new feedback to the data array
+            feedbackData.push({ name, email, feedback });
+
+            // Clear the form after submission
+            feedbackForm.reset();
+
+            // Update the feedback table
+            updateFeedbackTable();
+        });
+
+        // Update the feedback table with the feedback data
+        function updateFeedbackTable() {
+            feedbackTableBody.innerHTML = ''; // Clear the existing table rows
+
+            feedbackData.forEach(item => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `<td>${item.name}</td><td>${item.email}</td><td>${item.feedback}</td>`;
+                feedbackTableBody.appendChild(tr);
+            });
+        }
+
+        // Load CSV file and display feedback
+        csvFileInput.addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                const content = e.target.result;
+                const rows = content.split('\n');
+
+                rows.forEach(row => {
+                    const columns = row.split(',');
+                    if (columns.length === 3) {
+                        feedbackData.push({ name: columns[0].trim(), email: columns[1].trim(), feedback: columns[2].trim() });
+                    }
+                });
+
+                // Update the feedback table with the loaded data
+                updateFeedbackTable();
+            };
+
+            reader.readAsText(file);
+        });
+
+        // Download feedback as CSV file
+        downloadBtn.addEventListener('click', function() {
+            const csvContent = 'Name,Email,Feedback\n' + feedbackData.map(item => `${item.name},${item.email},${item.feedback}`).join('\n');
+            const blob = new Blob([csvContent], { type: 'text/csv' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'feedback.csv';
+            link.click();
+        });
+    </script>
+</body>
+</html>
